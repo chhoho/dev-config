@@ -6,8 +6,12 @@ set fencs=utf-8,usc-bom,euc-jp,gb18030,gbk,gb2312,cp936
 
 " 不要使用vi的键盘模式，而是vim自己的
 set nocompatible
+
 " 显示行号
 set nu
+
+" 背景色样式
+colorscheme desert
 
 " history文件中需要记录的行数
 set history=100
@@ -36,19 +40,97 @@ filetype indent on
 " 保存全局变量
 set viminfo+=!
 
-" 带有如下符号的单词不要被换行分割
-set iskeyword+=_,$,@,%,#,-
+" 带有如下符号的单词不要被换行分割 set iskeyword+=_,$,@,%,#,-
 
 " 语法高亮
 syntax on
 
 " 高亮字符，让其不受100列限制
-:highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
-:match OverLength '\%101v.*'
+":highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
+":match OverLength '\%101v.*'
 
 " 状态行颜色
 highlight StatusLine guifg=SlateBlue guibg=Yellow
 highlight StatusLineNC guifg=Gray guibg=White
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 插件设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible " be iMproved
+"filetype off " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+""格式1：Github上其他用户的仓库（非vim-scripts账户里的仓库，所以要加Github用户名）
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+
+"格式2：vim-scripts里面的仓库，直接打仓库名即可。
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
+""格式3：非Github的Git仓库
+"Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+
+"Bundle list
+"Syntax
+Bundle 'asciidoc.vim'
+Bundle 'confluencewiki.vim'
+Bundle 'html5.vim'
+Bundle 'JavaScript-syntax'
+
+"Bundle 'mako.vim'
+Bundle 'moin.vim'
+Bundle 'python.vim--Vasiliev'
+Bundle 'xml.vim'
+
+" Color
+Bundle 'desert256.vim'
+Bundle 'Impact'
+Bundle 'matrix.vim'
+Bundle 'vibrantink'
+Bundle 'vividchalk.vim'
+
+" Ftplugin
+Bundle 'python_fold'
+
+" Indent
+"Bundle 'indent/html.vim'
+Bundle 'IndentAnything'
+Bundle 'Javascript-Indentation'
+Bundle 'mako.vim--Torborg'
+Bundle 'gg/python.vim'
+
+" Plugin
+Bundle 'The-NERD-tree'
+Bundle 'AutoClose--Alves'
+Bundle 'auto_mkdir'
+Bundle 'cecutil'
+Bundle 'fcitx.vim'
+Bundle 'FencView.vim'
+
+"Bundle 'FuzzyFinder'
+Bundle 'jsbeautify'
+Bundle 'L9'
+Bundle 'Mark'
+Bundle 'matrix.vim'
+Bundle 'mru.vim'
+Bundle 'The-NERD-Commenter'
+
+"Bundle 'project.vim'
+Bundle 'restart.vim'
+Bundle 'taglist.vim'
+"Bundle 'templates.vim'
+
+"Bundle 'vimim.vim'
+Bundle 'ZenCoding.vim'
+Bundle 'css_color.vim'
+Bundle 'hallettj/jslint.vim'
+
+
+filetype plugin indent on " required
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 文件设置
